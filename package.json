@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "csurf": "^1.11.0",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "mongo-connect": "^0.0.6",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.15.0",
+    "nodemon": "^3.1.10"
+  }
+}
