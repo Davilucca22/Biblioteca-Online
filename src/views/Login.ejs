@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Login.css">
+    <script defer src="../../public/js/main.js"></script>
+    <title>Biblioteca Online/Login</title>
+</head>
+<body>
+    <div class="conteiner">
+        <header id="cabecalho">
+                <h1 class="txt">Entrar/Cadastrar</h1>
+        </header>
+        <main>
+            <div id="msg">
+                <p>Faça login ou crie sua conta agora!</p>
+            </div>
+            
+            <%- include('includes/messages') %>
+
+
+            <section id="PaiFormularios">
+                <div class="FilhoFormulario">
+                    <form action="/login/register" method="post">
+                        <fieldset>
+                        <legend>Registrar</legend>
+                        <input type="text" name="email" id="email" placeholder="Seu melhor E-mail..." autocomplete="off">
+                        <input type="password" name="password" id="password" placeholder="Crie uma senha forte...">
+                        <button type="submit">Registrar</button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="FilhoFormulario">
+                    <form action="/login/login" method="post">
+                        <fieldset>
+                        <legend>Entrar</legend> 
+                        <input type="text" name="email" id="email" placeholder="Seu E-mail..." autocomplete="off">
+                        <input type="password" name="password" id="password" placeholder="sua senha...">
+                        <button type="submit">Entrar</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

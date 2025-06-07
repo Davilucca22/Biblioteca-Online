@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="../../public/js/main.js"></script>
     <title>Biblioteca Online</title>
 </head>
 <body>
-    <h1>Ola mundo</h1>
+    <div class="conteiner">
+        <header id="cabecalho">
+                <h1 class="txt">Biblioteca Online</h1>
+                <form action="/login" method="post">
+                    <button type="submit">Entrar/Cadastrar</button>
+                </form>
+        </header>
+        <main>
+            <div id="inputBusca">
+                <form action="/busca" method="post">
+                    <input type="text" name="busca" id="busca" placeholder="Pequise por livros aqui... " autocomplete="off">
+                </form>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
