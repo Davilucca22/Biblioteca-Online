@@ -8,10 +8,11 @@ const login = require('../controllers/LoginController')
 route.get('/',home.index)
 
 route.get('/login',login.index)
-route.post('/login',login.index)
 
 route.post('/login/register',login.register)
+route.post('/login/login',login.LogIn)
+route.get('/login/logout',login.logout)
 
-route.post('/login/login',login.login)
+
 
 module.exports = route  

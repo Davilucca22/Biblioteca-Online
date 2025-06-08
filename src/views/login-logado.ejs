@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/Login.css">
     <script defer src="../../public/js/main.js"></script>
-    <title>Biblioteca Online</title>
+    <title>Biblioteca Online/Login</title>
 </head>
 <body>
     <div class="conteiner">
         <header id="cabecalho">
-                <h1 class="txt">Biblioteca Online</h1>
-                <% if(user) { %>
+             <h1 class="txt">Ola <%= user.email %></h1>
+             
+            <% if(user) { %>
                 <li>
                     <a href="/login/logout">Sair</a>
                 </li>
@@ -20,15 +21,17 @@
                     <a href="/login">Entrar</a>
                 </li>
                 <% }%>
-
+               
         </header>
         <main>
-            <%- include('includes/messages') %>
-            <div id="inputBusca">
-                <form action="/busca" method="post">
-                    <input type="text" name="busca" id="busca" placeholder="Pequise por livros aqui... " autocomplete="off">
-                </form>
+            <div id="msg">
+        
+                <p>Voce fez login</p>
             </div>
+            
+            <%- include('includes/messages') %>
+
+            </section>
         </main>
     </div>
 </body>
