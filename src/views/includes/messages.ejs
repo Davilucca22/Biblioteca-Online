@@ -1,9 +1,21 @@
-<% if(errors) { %>
+<% if(errors.length > 0) { %>
 <div class="row">
     <div class="col">
-        <div class="alert alert-danger" style="width: 70%; background-color: rgba(235, 88, 88, 0.452); margin: 0 auto;text-align: center;border-radius: 10px; font-size: 16pt;font-family: sans-serif">
+        <div class="alert alert-danger" style="width: 70%; background-color: rgba(235, 88, 88, 0.452); margin: 0 auto;text-align: center;border-radius: 8px; font-size: 16pt;font-family: sans-serif; padding: 5px;">
             <% errors.forEach(erro => { %>
                 <%= erro %><br>
+           <% }) %>
+        </div>
+    </div>
+</div>
+<% } %>
+
+<% if(success.length > 0) { %>
+<div class="row">
+    <div class="col">
+        <div class="alert alert-success" style="width: 70%; background-color: rgba(148, 255, 157, 0.452); margin: 0 auto;text-align: center;border-radius: 8px; font-size: 16pt;font-family: sans-serif; padding: 5px;">
+            <% success.forEach(suc => { %>
+                <%= suc %><br>
            <% }) %>
         </div>
     </div>
