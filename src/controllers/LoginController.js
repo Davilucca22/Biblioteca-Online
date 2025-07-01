@@ -1,5 +1,5 @@
 const { render } = require('ejs')
-const Login = require('../models/livroModel')
+const Login = require('../models/LoginModel')
 
 exports.index = (req, res) => {
     if(req.session.user){

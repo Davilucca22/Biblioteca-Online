@@ -11,23 +11,28 @@
     <div class="conteiner">
         <header id="cabecalho">
                 <h1 class="txt">Biblioteca Online</h1>
+
+                <div id="links">
+                    <a href="/cadastrar/index">Cadastrar Livro</a>
                 <% if(user) { %>
-                <li>
                     <a href="/login/logout">Sair</a>
-                </li>
                 <% }else{ %>
-                <li>
                     <a href="/login">Entrar</a>
-                </li>
                 <% }%>
 
+                </div>
+                
+
         </header>
+        <%- include('includes/messages') %>
         <main>
-            <%- include('includes/messages') %>
             <div id="inputBusca">
                 <form action="/busca" method="post">
                     <input type="text" name="busca" id="busca" placeholder="Pequise por livros aqui... " autocomplete="off">
                 </form>
+                <main>
+                    
+                </main>
             </div>
         </main>
     </div>

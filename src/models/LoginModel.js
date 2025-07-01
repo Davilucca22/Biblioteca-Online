@@ -38,6 +38,7 @@ class Login {
         this.valida()
         if(this.errors.length > 0) return
         
+        //essa funçao retorna uma promisse, por isso o await
         await this.usuarioExiste()
         if(this.errors.length > 0) return
 
@@ -50,11 +51,13 @@ class Login {
 
     }
 
+    //verifica se o usuario existe
     async usuarioExiste(){
         this.user = await LoginModel.findOne({email: this.body.email})
         if(this.user) this.errors.push('Usuario ja existe!')
     }
 
+    //valida a senha e o email
     valida(){
         this.CleanUp()
 
@@ -62,6 +65,7 @@ class Login {
         if(this.body.password.length < 5 || this.body.password.length > 10) this.errors.push('Senha deve conter entre 5 e 10 caracteres!')
     }
 
+    //limpa o body caso o tipo dos dados seja diferente de string
     CleanUp(){
         for(let key in this.body){
             if(typeof this.body[key] != 'string'){

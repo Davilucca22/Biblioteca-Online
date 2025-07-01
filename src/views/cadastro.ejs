@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/cadastro.css">
+    <script defer src="../../public/js/main.js"></script>
+    <title>Biblioteca Online/Login</title>
+</head>
+<body>
+    <div class="conteiner">
+        <header id="cabecalho">
+                <div class="elementosDoHeader">
+                    <h1 class="txt">Cadastrar livro</h1>
+                    <div id="links">
+                     <% if(user) { %>
+                        <a href="/login/logout">Sair</a>
+                    <% }else{ %>
+                        <a href="/login">Entrar</a>
+                    <% }%>
+                    </div>
+                </div>
+                
+        </header>
+        <main> 
+            
+            <section id="PaiFormularios">
+                <div class="FilhoFormulario">
+                    <form action="/cadastrar/register" method="post">
+                        <fieldset>
+                            <legend>Registrar Livro</legend>
+                            <div class="inputs">
+                            <%- include('includes/messages') %>
+                            <input type="text" name="titulo" id="titulo" placeholder="Titulo do livro..." autocomplete="off">
+                            <input type="text" name="autor" id="autor" placeholder="Autor do livro..." autocomplete="off">
+                            <input type="text" name="genero" id="genero" placeholder="Genero do livro..." autocomplete="off">
+                        </div>
+                        <div>
+                            <label>Anexe a capa do livro abaxo:</label>
+                            <input type="file" name="capa" id="">
+                        </div>
+                        <button type="submit">Registrar</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
