@@ -24,16 +24,10 @@ exports.LoginRequired = (req,res,next) => {
     next()
 }
 
-exports.ImgConvert = (req,res,next) => {
-    
-    // Armazenamento temporário em disco
-    const upload = multer({dest:'uploads/'})
+// Armazenamento temporário em disco
+const upload = multer({dest:'uploads/'})
 
-    //usa multer para processar o arquivo
-    upload.single('capa')(req,res,(err) =>{
-        if(err){
-            return res.status(400).send('Erro no Upload da imagem')
-        }
+exports.ImgConvert = (req,res,next) => {
 
         if(!req.file){
             return res.status(400).send('Nenhuma imagem enviada')
@@ -46,15 +40,10 @@ exports.ImgConvert = (req,res,next) => {
         const dadosBase64 = fs.readFileSync(caminho,{encoding:'base64'})
 
         // Injeta no body como objeto de imagem
-        req.body.capa = {
-            nome: req.file.originalname,
-            tipo:mime,
-            base64:dadosBase64
-        }
+        req.body.capa = `data:${mime};base64,${dadosBase64}`
 
         // Apaga o arquivo temporário do disco
         fs.unlinkSync(caminho)
 
         next()
-    })
 }

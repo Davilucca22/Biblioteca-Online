@@ -26,7 +26,7 @@
             
             <section id="PaiFormularios">
                 <div class="FilhoFormulario">
-                    <form action="/cadastrar/register" method="post">
+                    <form action="/cadastrar/register" method="post" enctype="multipart/form-data">
                         <fieldset>
                             <legend>Registrar Livro</legend>
                             <div class="inputs">
@@ -37,7 +37,7 @@
                         </div>
                         <div>
                             <label>Anexe a capa do livro abaxo:</label>
-                            <input type="file" name="capa" id="">
+                            <input type="file" name="capa">
                         </div>
                         <button type="submit">Registrar</button>
                         </fieldset>
