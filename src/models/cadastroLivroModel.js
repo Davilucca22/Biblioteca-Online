@@ -27,6 +27,12 @@ class CadastrarLivro{
         }
     }
 
+    //busca itens no banco de dados
+    async FindItem() {
+        const busca = await CadastroModel.find()
+        return busca
+    }
+
     valida(){
         this.CleanUp()
 

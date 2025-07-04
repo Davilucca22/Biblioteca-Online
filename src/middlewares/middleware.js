@@ -2,14 +2,15 @@ const flash = require('connect-flash')
 const express = require('express')
 const multer = require('multer')
 const fs = require('fs')
+const CadastrarLivro = require("../models/cadastroLivroModel")
 
 const app = express()
-
 
 exports.Global = (req,res,next) => {
     res.locals.errors = req.flash('errors')
     res.locals.success = req.flash('success')
     res.locals.user = req.session.user
+
     next()
 }
 
@@ -27,6 +28,7 @@ exports.LoginRequired = (req,res,next) => {
 // Armazenamento temporário em disco
 const upload = multer({dest:'uploads/'})
 
+//converte imagens em base64 para salvar no banco de dados como string
 exports.ImgConvert = (req,res,next) => {
 
         if(!req.file){
@@ -47,3 +49,4 @@ exports.ImgConvert = (req,res,next) => {
 
         next()
 }
+

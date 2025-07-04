@@ -58,3 +58,7 @@ body{
     color: rgb(56, 25, 0);
     text-decoration: none;
 }
+
+img{
+    width: 300px;
+}

@@ -8,7 +8,7 @@ const cadastro = require('../controllers/cadastroController')
 const { LoginRequired, ImgConvert  } = require('../middlewares/middleware')
 
 //rotas de home
-route.get('/',home.index)
+route.get('/',cadastro.buscarItem,home.index)
 
 //rotas de login
 route.get('/login',login.index)

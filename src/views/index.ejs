@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +8,48 @@
     <script defer src="../../public/js/main.js"></script>
     <title>Biblioteca Online</title>
 </head>
+
 <body>
     <div class="conteiner">
         <header id="cabecalho">
-                <h1 class="txt">Biblioteca Online</h1>
+            <h1 class="txt">Biblioteca Online</h1>
 
-                <div id="links">
-                    <a href="/cadastrar/index">Cadastrar Livro</a>
+            <div id="links">
+                <a href="/cadastrar/index">Cadastrar Livro</a>
                 <% if(user) { %>
                     <a href="/login/logout">Sair</a>
-                <% }else{ %>
-                    <a href="/login">Entrar</a>
-                <% }%>
+                    <% }else{ %>
+                        <a href="/login">Entrar</a>
+                        <% }%>
 
-                </div>
-                
+            </div>
+
 
         </header>
         <%- include('includes/messages') %>
-        <main>
-            <div id="inputBusca">
-                <form action="/busca" method="post">
-                    <input type="text" name="busca" id="busca" placeholder="Pequise por livros aqui... " autocomplete="off">
-                </form>
-                <main>
-                    <div>
-
-                    </div>
-                </main>
-            </div>
-        </main>
+            <main>
+                <div id="inputBusca">
+                    <form action="/busca" method="post">
+                        <input type="text" name="busca" id="busca" placeholder="Pequise por livros aqui... "
+                            autocomplete="off">
+                    </form>
+                    <main>
+                        <div id="capas">
+                            <% if (item && item.length> 0) { %>
+                                <% item.forEach(itens=> { %>
+                                    <div id="livro">
+                                        <h2><%- itens.titulo %></h2>
+                                        <img src="<%- itens.capa %>" alt="Capa do livro">
+                                        <h3>Autor: <%- itens.autor%></h3>
+                                        <h4>Genero: <%- itens.genero%></h4>
+                                    </div>
+                                <% }) %>
+                            <% } %>
+                        </div>
+                    </main>
+                </div>
+            </main>
     </div>
 </body>
+
 </html>
