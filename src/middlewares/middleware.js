@@ -32,7 +32,9 @@ const upload = multer({dest:'uploads/'})
 exports.ImgConvert = (req,res,next) => {
 
         if(!req.file){
-            return res.status(400).send('Nenhuma imagem enviada')
+            const banco = new CadastrarLivro(req.body)
+            banco.errors.push('Nenhuma Imagem Enviada')
+            return next()
         }
 
         const caminho = req.file.path

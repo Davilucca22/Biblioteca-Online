@@ -29,8 +29,19 @@ class CadastrarLivro{
 
     //busca itens no banco de dados
     async FindItem() {
-        const busca = await CadastroModel.find()
-        return busca
+        return await CadastroModel.find()
+    }
+
+    async FindOneItem(id) {
+        return await CadastroModel.findOne({_id:id})
+    }
+
+    async EditItem(id,NovosDados) {
+        return await CadastroModel.updateOne({_id:id},{ $set: NovosDados})
+    }
+
+    async DeleteItem(id){
+        return await CadastroModel.findByIdAndDelete({_id:id})
     }
 
     valida(){

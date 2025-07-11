@@ -5,6 +5,7 @@ const app = express()
 
 const mongoose = require('mongoose')
 
+app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 mongoose.connect(process.env.LOGINADM,{ useNewUrlParser: true, useUnifiedTopology: true }).then(() => {

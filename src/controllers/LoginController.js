@@ -47,7 +47,7 @@ exports.LogIn = async (req, res) => {
         req.flash('success','Usuario logado')
         req.session.user = login.user
         req.session.save(function () {
-            return res.redirect(req.get('Referer') || '/login')
+            return res.redirect('/')
         })
 
 

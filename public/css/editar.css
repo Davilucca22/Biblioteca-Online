@@ -30,14 +30,6 @@ body{
     font-weight: 700;
 }
 
-#msg{
-    margin: 0 auto;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 18pt;
-    color: var(--cor-do-texto);
-}
-
 #PaiFormularios{
     display: flex;
     width: 100%;
@@ -75,6 +67,7 @@ legend{
 
 
 fieldset{
+    
     border: 2px solid var(--cor-do-texto);
     box-shadow: 0px 1px 5px gray;
     margin-top: 50px;
@@ -89,16 +82,29 @@ label{
 
 button{
     height: 50px;
-    width: 100px;
-    background-color: var(--cor-do-texto);
-    color: aliceblue;
-    font-size: 11pt;
+    width: 90%;
+    padding: 5px;
+    margin: 10px;
+    background-color: rgb(191, 248, 191);
+    color: black;
+    font-size: 15pt;
     font-weight: 700;
     border-radius: 10px;
+    border: 2px solid black;
 }
 
 button:hover{
     cursor: pointer;
+}
+
+#delete{
+    background-color: rgb(124, 4, 4);
+}
+
+#delete a {
+    text-decoration: none;
+    color: black;
+    font-size: 15pt;
 }
 
 .elementosDoHeader{
@@ -119,11 +125,7 @@ button:hover{
     text-decoration: none;
 }
 
-#salvarMudancas{
-    width: 90%;
-    margin: 20px;
-}
-
-img{
-    width: 600px;
+#formContent{
+    width: 100%;
+    text-align: center;    
 }

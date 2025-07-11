@@ -36,17 +36,7 @@
                 </div>
                     <section>
                         <div id="capas">
-                            <% if (item && item.length> 0) { %>
-                                <% item.forEach(itens=> { %>
-                                    <div class="livro">
-                                        <h2 id="titulo" class="texto"><%- itens.titulo.toUpperCase() %></h2>
-                                        <img src="<%- itens.capa %>" alt="Capa do livro">
-                                        <h3 id="autor" class="texto">Autor: <%- itens.autor%></h3>
-                                        <h4 id="genero" class="texto">Genero: <%- itens.genero%></h4>
-                                        <button type="submit"><a href="/detalhes/<%- itens.id %>">EDITAR LIVRO</a></button>
-                                    </div>
-                                <% }) %>
-                            <% } %>
+                            
                         </div>
                     </section>
             </main>

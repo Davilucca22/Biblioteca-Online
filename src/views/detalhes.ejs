@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/editar.css">
+    <script defer src="../../public/js/main.js"></script>
+    <title>Biblioteca Online</title>
+</head>
+
+<body>
+    <div class="conteiner">
+        <header id="cabecalho">
+                <div class="elementosDoHeader">
+                    <h1 class="txt">Editar livro</h1>
+                    <div id="links">
+                        <a href="/">Voltar</a>
+                    </div>
+                </div>
+                
+        </header>
+        <%- include('includes/messages') %>
+        <div id="conteiner">
+            <main>
+                   <section id="PaiFormularios">
+                <div class="FilhoFormulario">
+                    <form action="/detalhes/editar/<%- livroClicado.id %>" method="post" enctype="multipart/form-data">
+                        <fieldset>
+                            <legend>Editar Livro</legend>
+                        <div id="formContent">
+                            <div class="inputs">
+                                <%- include('includes/messages') %>
+                                <input type="text" name="titulo" id="titulo" value="<%- livroClicado.titulo %>"  placeholder="Titulo do livro..." utocomplete="off">
+                                <input type="text" name="autor" id="autor" value="<%- livroClicado.autor %>" placeholder="Autor do livro..."  autocomplete="off">
+                                <input type="text" name="genero" id="genero" value="<%- livroClicado.genero %>" placeholder="genero..." autocomplete="off">
+                            </div>
+                                <label>Anexe a nova capa abaixo:</label>
+                                <input type="file" name="capa".>
+                            <button type="submit" id="salvar">Salvar Mudanças</button>
+                            <button type="button" id="delete"><a href="/detalhes/deletar/<%- livroClicado.id %>">Deletar Livro</a></button>
+                        </div>
+                    </fieldset>
+                </form>
+                </div>
+            </section>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
