@@ -34,6 +34,6 @@ route.post('/detalhes/editar/:id',upload.single('capa'),ImgConvert,detalhes.edit
 //rota de deletar
 route.get('/detalhes/deletar/:id',detalhes.deletar)
 
-route.post('/busca',busca.buscaItem)
+route.post('/busca',busca.BuscaNoBanco,busca.index)
 
 module.exports = route  

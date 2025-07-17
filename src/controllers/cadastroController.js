@@ -31,7 +31,7 @@ exports.buscarItem = async (req,res,next) => {
     try{
 
         const buscandoItem = new CadastrarLivro(req.body)
-        const item = await buscandoItem.FindItem()
+        const item = await buscandoItem.allItems()
 
         //array com todos os dados dos livros
         res.locals.item = item

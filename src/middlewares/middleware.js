@@ -3,8 +3,7 @@ const express = require('express')
 const multer = require('multer')
 const fs = require('fs')
 const CadastrarLivro = require("../models/cadastroLivroModel")
-
-const app = express()
+const { registro } = require('../controllers/cadastroController')
 
 exports.Global = (req,res,next) => {
     res.locals.errors = req.flash('errors')
@@ -30,13 +29,18 @@ const upload = multer({dest:'uploads/'})
 
 //converte imagens em base64 para salvar no banco de dados como string
 exports.ImgConvert = (req,res,next) => {
+    
+    if(!req.file){
+            console.log(`REQ.FILE = ${req.file}`)
 
-        if(!req.file){
-            const banco = new CadastrarLivro(req.body)
-            banco.errors.push('Nenhuma Imagem Enviada')
-            return next()
+            req.session.save(function() {
+                req.flash('errors','anexe uma imagem a capa!')
+                res.redirect(req.get('Referer') || '/')
+            })
+            return
         }
 
+        try{
         const caminho = req.file.path
         const mime = req.file.mimetype
 
@@ -49,6 +53,10 @@ exports.ImgConvert = (req,res,next) => {
         // Apaga o arquivo temporário do disco
         fs.unlinkSync(caminho)
 
-        next()
+        return next()
+
+        }catch(e){
+            res.render('404')
+        }
 }
 

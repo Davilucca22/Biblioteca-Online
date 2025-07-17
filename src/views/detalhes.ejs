@@ -20,7 +20,6 @@
                 </div>
                 
         </header>
-        <%- include('includes/messages') %>
         <div id="conteiner">
             <main>
                    <section id="PaiFormularios">
@@ -36,7 +35,7 @@
                                 <input type="text" name="genero" id="genero" value="<%- livroClicado.genero %>" placeholder="genero..." autocomplete="off">
                             </div>
                                 <label>Anexe a nova capa abaixo:</label>
-                                <input type="file" name="capa".>
+                                <input type="file" name="capa">
                             <button type="submit" id="salvar">Salvar Mudanças</button>
                             <button type="button" id="delete"><a href="/detalhes/deletar/<%- livroClicado.id %>">Deletar Livro</a></button>
                         </div>
